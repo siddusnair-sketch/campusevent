@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penta Micron Seals | Premium Industrial Sealing Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #e63946;
+            --accent-light: #ff6b6b;
+            --light: #f5f5f5;
+            --dark: #0a0a0a;
+            --gray: #6c757d;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.7;
+            color: var(--secondary);
+            background-color: var(--primary);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(230, 57, 70, 0.2);
+        }
+        
+        header.scrolled {
+            background-color: rgba(10, 10, 10, 0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+            padding: 5px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        header.scrolled .navbar {
+            padding: 10px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            transform: translateX(-20px);
+            opacity: 0;
+            animation: slideInLeft 0.8s forwards 0.3s;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-left: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .logo-icon {
+            color: var(--accent);
+            font-size: 2rem;
+            filter: drop-shadow(0 0 5px rgba(230, 57, 70, 0.5));
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: fadeInDown 0.6s forwards;
+        }
+        
+        .nav-links li:nth-child(1) { animation-delay: 0.4s; }
+        .nav-links li:nth-child(2) { animation-delay: 0.5s; }
+        .nav-links li:nth-child(3) { animation-delay: 0.6s; }
+        .nav-links li:nth-child(4) { animation-delay: 0.7s; }
+        .nav-links li:nth-child(5) { animation-delay: 0.8s; }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1001;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .hamburger.active {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 26, 0.85)),
+                url('file:///C:/Users/ASUS/Downloads/d593cc8c-32a9-4eb3-8e3b-8f4098e4c0a2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 1.2s forwards 0.5s;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.7);
+            line-height: 1.1;
+            background: linear-gradient(to right, #fff, var(--accent-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.7s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(230, 57, 70, 0.5);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Sections */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .section-title p {
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 35px auto 0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        /* Products Section */
+        #products {
+            background-color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #products::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.1) 0%, transparent 70%);
+            top: -150px;
+            right: -150px;
+            z-index: 0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-card {
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: var(--transition);
+            transform: translateY(60px);
+            opacity: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .product-card.animate {
+            animation: fadeInUp 0.9s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.2s; }
+        .product-card:nth-child(2) { animation-delay: 0.4s; }
+        .product-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        .product-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 25px 50px rgba(230, 57, 70, 0.2);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-content {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .product-content h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .product-content p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+        
+        .about-image {
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            transform: translateX(50px);
+            opacity: 0;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .about-image.animate {
+            animation: slideInRight 1.2s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.2);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(230, 57, 70, 0.3);
+        }
+        
+        .stat-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+        
+        /* Services Section */
+        #services {
+            background-color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #services::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, transparent 70%);
+            bottom: -200px;
+            left: -200px;
+            z-index: 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 45px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            text-align: center;
+            transition: var(--transition);
+            transform: translateY(60px);
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+            transition: var(--transition);
+        }
+        
+        .service-card:hover::before {
+            height: 100%;
+        }
+        
+        .service-card.animate {
+            animation: fadeInUp 1s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.2s; }
+        .service-card:nth-child(2) { animation-delay: 0.4s; }
+        .service-card:nth-child(3) { animation-delay: 0.6s; }
+        .service-card:nth-child(4) { animation-delay: 0.8s; }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(230, 57, 70, 0.2);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--accent-light);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 30px;
+            color: var(--secondary);
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .contact-details {
+            margin-bottom: 50px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+            transform: translateX(-30px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .contact-item.animate {
+            animation: slideInLeft 1s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .contact-item:nth-child(1) { animation-delay: 0.2s; }
+        .contact-item:nth-child(2) { animation-delay: 0.4s; }
+        .contact-item:nth-child(3) { animation-delay: 0.6s; }
+        
+        .contact-icon {
+            margin-right: 25px;
+            color: var(--accent);
+            font-size: 1.5rem;
+            width: 30px;
+            margin-top: 5px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.2);
+            color: var(--accent-light);
+        }
+        
+        .contact-item h4 {
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .contact-item p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(20, 20, 20, 0.8);
+            color: var(--accent);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            transform: translateY(0);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.2rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            color: var(--secondary);
+            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
+        }
+        
+        .contact-form {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transform: translateX(40px);
+            opacity: 0;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-form.animate {
+            animation: slideInRight 1.2s forwards 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(10, 10, 10, 0.7);
+            color: var(--secondary);
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+            background: rgba(15, 15, 15, 0.9);
+        }
+        
+        .contact-form textarea {
+            height: 160px;
+            resize: vertical;
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Footer */
+        footer {
+            background: #000000;
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(230, 57, 70, 0.2);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent), var(--accent-light));
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-column p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer-links a::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-light);
+            padding-left: 15px;
+        }
+        
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(45deg, var(--accent), var(--accent-light));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(230, 57, 70, 0.6);
+        }
+        
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(230, 57, 70, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Particle Animation */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(230, 57, 70, 0.5);
+            border-radius: 50%;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h2 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                height: 400px;
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 120px 40px 40px;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.7);
+                transition: var(--transition);
+                border-left: 1px solid rgba(230, 57, 70, 0.2);
+                backdrop-filter: blur(10px);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+                transform: translateX(0);
+                opacity: 1;
+                animation: none;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 10px 0;
+                display: block;
+                width: 100%;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title p {
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 35px 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .product-card, .service-card {
+                padding: 25px 20px;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <h1>Penta Micron</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Precision Sealing Solutions</h2>
+                <p>Penta Micron provides high-performance industrial seals and gaskets for demanding applications across various industries, ensuring reliability, durability, and efficiency.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Discover our range of high-quality sealing solutions designed for optimal performance, durability, and reliability in the most demanding industrial environments.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://leakpack.com/wp-content/uploads/2017/12/purpose-of-mechanical-seal.jpg" alt="Mechanical Seals">
+                    </div>
+                    <div class="product-content">
+                        <h3>Mechanical Seals</h3>
+                        <p>High-performance mechanical seals for pumps, compressors, and other rotating equipment. Engineered to withstand extreme conditions and prolong equipment life.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://www.globaloring.com/wp-content/uploads/2018/09/GOR_Wipers_A_rgb.jpg" alt="Hydraulic Seals">
+                    </div>
+                    <div class="product-content">
+                        <h3>Hydraulic Seals</h3>
+                        <p>Durable hydraulic seals designed to withstand extreme pressures and temperatures. Perfect for hydraulic systems in manufacturing and heavy machinery.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://www.gasketeng.com/wp-content/uploads/2016/11/custom-gaskets-495x400.jpg" alt="Custom Gaskets">
+                    </div>
+                    <div class="product-content">
+                        <h3>Custom Gaskets</h3>
+                        <p>Custom-designed gaskets tailored to your specific application requirements. Manufactured with precision for perfect sealing in any environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Penta Micron</h2>
+                <p>Learn more about our company and our commitment to quality, innovation, and excellence in industrial sealing solutions.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Partner in Sealing Solutions</h3>
+                    <p>Penta Micron has been at the forefront of industrial sealing technology for over a decade. We specialize in designing and manufacturing high-performance seals and gaskets for a wide range of industries including oil and gas, chemical processing, manufacturing, and more.</p>
+                    <p>Our team of experienced engineers and technicians work closely with clients to develop custom solutions that meet their specific requirements and operating conditions. We leverage cutting-edge technology and materials to ensure our products deliver unmatched performance and longevity.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="500">0</div>
+                            <div class="stat-text">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-text">Expert Engineers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="12">0</div>
+                            <div class="stat-text">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="file:///C:/Users/ASUS/Downloads/d593cc8c-32a9-4eb3-8e3b-8f4098e4c0a2.png" alt="Penta Micron Manufacturing Facility">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive sealing solutions and support services to meet your industrial needs and exceed your expectations.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Custom Design</h3>
+                    <p>Tailored sealing solutions designed to meet your specific application requirements with precision engineering and innovative design.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Quality Testing</h3>
+                    <p>Rigorous testing procedures and quality assurance protocols to ensure product reliability and performance under extreme conditions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Technical Support</h3>
+                    <p>Expert consultation and 24/7 support for all your sealing challenges, from product selection to troubleshooting and maintenance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Timely delivery of products worldwide to keep your operations running smoothly with minimal downtime and disruption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team to discuss your sealing requirements, request a quote, or learn more about our products and services.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>SF No.301/5 L & T Bye Pass Road,<br>Madukkarai, Tamil Nadu 641105</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>093455 04222</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@pentamicron.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/pentamicronseals/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/pentamicron/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Penta Micron</h3>
+                    <p>Providing high-performance industrial sealing solutions for over a decade with a commitment to quality, innovation, and customer satisfaction.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> SF No.301/5 L & T Bye Pass Road, Madukkarai, Tamil Nadu 641105</li>
+                        <li><i class="fas fa-phone"></i> 093455 04222</li>
+                        <li><i class="fas fa-envelope"></i> info@pentamicron.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Penta Micron Seals. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color:var(--accent);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 800);
+        });
+
+        // Particle animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                
+                // Random size
+                const size = Math.random() * 4 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
+                
+                // Add custom animation
+                particle.style.setProperty('--float-x', `${Math.random() * 100 - 50}px`);
+                particle.style.setProperty('--float-y', `${Math.random() * 100 - 50}px`);
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Add custom float animation
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes float {
+                0% { transform: translate(0, 0) rotate(0deg); }
+                25% { transform: translate(var(--float-x), var(--float-y)) rotate(90deg); }
+                50% { transform: translate(calc(var(--float-x) * -1), calc(var(--float-y) * -1)) rotate(180deg); }
+                75% { transform: translate(calc(var(--float-x) * 0.5), calc(var(--float-y) * 0.5)) rotate(270deg); }
+                100% { transform: translate(0, 0) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+        
+        // Initialize particles
+        createParticles();
+
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Scroll to top button visibility
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            if (scrollTop > 500) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        // Scroll animations with Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // If it's a stat item, start counting
+                    if (entry.target.classList.contains('stat-item')) {
+                        const statNumber = entry.target.querySelector('.stat-number');
+                        if (statNumber && !statNumber.classList.contains('counted')) {
+                            animateCounter(statNumber);
+                            statNumber.classList.add('counted');
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements that need animation
+        document.querySelectorAll('.product-card, .about-image, .service-card, .contact-item, .contact-form, .stat-item').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Counter animation for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-count'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+        
+        // Form submission handling
+        // REAL Form submission → Node backend
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+
+    try {
+        const response = await fetch("http://localhost:5000/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert("✅ Message sent successfully!");
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("❌ Failed to send message");
+        }
+    } catch (error) {
+        console.error(error);
+        alert("⚠️ Server error. Make sure backend is running.");
+    }
+    });
+
+        
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
